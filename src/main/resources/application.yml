@@ -1,0 +1,39 @@
+spring:
+  boot:
+    admin:
+      server:
+        base-path: /applications
+
+  datasource:
+    #    로컬 docker의 MySQL과 연동
+    url: jdbc:mysql://localhost:3306/katj
+    username: root
+    password: katj4
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: true
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      show-components: always
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+
+server:
+  port: 8080
