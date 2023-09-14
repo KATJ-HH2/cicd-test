@@ -11,7 +11,7 @@ class ProductController(
     private val productService: ProductService
 ) {
     @PostMapping()
-    fun addProduct(@RequestBody productRequest: ProductRequest) {
+    fun addProduct1(@RequestBody productRequest: ProductRequest) {
         productService.insertProduct(productRequest)
     }
 
