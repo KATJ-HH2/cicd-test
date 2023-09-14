@@ -19,4 +19,9 @@ class ProductController(
     fun getProduct(@PathVariable("id") id: Long): ProductResponse {
         return productService.getProduct(id)
     }
+
+    @GetMapping("/hello")
+    fun hello(): String {
+        return "hello world!!!"
+    }
 }
