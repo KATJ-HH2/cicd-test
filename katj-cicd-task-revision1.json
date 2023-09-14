@@ -15,7 +15,20 @@
                 }
             ],
             "essential": true,
-            "environment": [],
+            "environment": [
+                {
+                    "name": "SPRING_DATASOURCE_USERNAME",
+                    "value": "katj"
+                },
+                {
+                    "name": "SPRING_DATASOURCE_PASSWORD",
+                    "value": "katj123!"
+                },
+                {
+                    "name": "SPRING_DATASOURCE_URL",
+                    "value": "jdbc:mysql://katj-db.clwqjlzrayle.ap-northeast-2.rds.amazonaws.com:3306/katj"
+                }
+            ],
             "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
