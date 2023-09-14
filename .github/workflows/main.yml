@@ -10,7 +10,7 @@ env:
   ECS_SERVICE: katj-service-ecs-dev
   ECS_CLUSTER: katj-cluster-ecs-dev
   ECS_TASK_DEFINITION: katj-task-dev.json
-#  ACTIVE_PROFILE: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
+#  ACTIVE_PROFILE: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }} ...
 
 permissions:
   contents: read
