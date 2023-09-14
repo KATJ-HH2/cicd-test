@@ -22,6 +22,7 @@ class ProductController(
 
     @GetMapping("/hello")
     fun hello(): String {
-        return "hello world!!!"
+        return "hello world!!"
     }
+
 }
