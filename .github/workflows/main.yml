@@ -44,7 +44,7 @@ jobs:
 
       - name: Build with Gradle
         id: build
-        run: ./gradlew clean build -x test
+#        run: ./gradlew clean build -x test
 
 #  deploy-dev:
 #    name: Deploy-dev
