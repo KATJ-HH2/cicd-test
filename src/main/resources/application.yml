@@ -5,10 +5,7 @@ spring:
         base-path: /applications
 
   datasource:
-    #    로컬 docker의 MySQL과 연동
-    url: jdbc:mysql://katj-mysql:3306/katj
-    username: root
-    password: katj4
+    url: jdbc:mysql://katj-db.clwqjlzrayle.ap-northeast-2.rds.amazonaws.com:3306/katj
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:

@@ -9,7 +9,7 @@ env:
   ECR_REPOSITORY: katj-cicd-dev
   ECS_SERVICE: katj-service-ecs-dev
   ECS_CLUSTER: katj-cluster-ecs-dev
-  ECS_TASK_DEFINITION: katj-task-dev.json
+  ECS_TASK_DEFINITION: katj-cicd-task-revision1.json
 #  ACTIVE_PROFILE: ${{ github.ref == 'refs/heads/main' && 'prod' || 'dev' }}
 
 permissions:
@@ -28,6 +28,15 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '17'
+
+      # 환경변수 .env 파일 생성 및 write
+      - name: Set .env for configuration
+        run: |
+          touch ./.env
+          echo "SPRING_DATASOURCE_USERNAME=${{ secrets.DB_USERNAME }}" >> ./.env
+          echo "SPRING_DATASOURCE_PASSWORD=${{ secrets.DB_PASSWORD }}" >> ./.env
+#          echo "SPRING_PROFILES_ACTIVE=${{ env.ACTIVE_PROFILE }}" >> ./.env
+        shell: bash
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
@@ -56,7 +65,7 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
+          IMAGE_TAG: latest
         run: |
           # Build a docker container and
           # push it to ECR so that it can
