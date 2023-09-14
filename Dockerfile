@@ -10,7 +10,7 @@ COPY build/libs/cicdtest-0.0.1-SNAPSHOT.jar app.jar
 ENV SPRING_PROFILES_ACTIVE=dev
 
 # MySQL 환경 변수 설정 (개발 환경용)
-ENV SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/katj
+ENV SPRING_DATASOURCE_URL=jdbc:mysql://katj-mysql:3306/katj
 ENV SPRING_DATASOURCE_USERNAME=root
 ENV SPRING_DATASOURCE_PASSWORD=katj4
 
