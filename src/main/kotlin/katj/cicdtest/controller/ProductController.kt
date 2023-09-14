@@ -14,7 +14,7 @@ class ProductController(
     fun addProduct(@RequestBody productRequest: ProductRequest) {
         productService.insertProduct(productRequest)
     }
-
+    //Test
     @GetMapping("/{id}")
     fun getProduct(@PathVariable("id") id: Long): ProductResponse {
         return productService.getProduct(id)
