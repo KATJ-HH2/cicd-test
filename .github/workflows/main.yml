@@ -30,6 +30,12 @@ jobs:
           distribution: 'corretto'
           java-version: '17'
 
+      - name: ktlint
+        uses: ScaCap/action-ktlint@3
+        with:
+          github_token: ghp_olSCNi55b0hqobVZtf2zRuTRRj1KnV1ON7qB
+          reporter: github-pr-check # Change reporte
+
       # 환경변수 .env 파일 생성 및 write
       - name: Set .env for configuration
         run: |
