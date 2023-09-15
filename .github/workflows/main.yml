@@ -37,9 +37,9 @@ jobs:
           github_token: ${{ secrets.git_hub_token }}
           reporter: github-pr-check # Change reporte
 
-      # kotlin style 테스트
-      - name: kotlin style 테스트
-        run: ./gradlew detekt
+      # 프로젝트 Unit 테스트
+      - name: 프로젝트 Unit 테스트
+        run: ./gradlew testdebugUnitTest
 
       # 환경변수 .env 파일 생성 및 write
       - name: Set .env for configuration
