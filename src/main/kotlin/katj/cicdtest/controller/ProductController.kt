@@ -25,4 +25,9 @@ class ProductController(
         return "hello world!!"
     }
 
+    @GetMapping("/lb-check")
+    fun lbCheck(): String {
+        return "Welcome to the AWS Load Balancer"
+    }
+
 }
