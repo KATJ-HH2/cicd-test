@@ -30,6 +30,7 @@ jobs:
           distribution: 'corretto'
           java-version: '17'
 
+      # Link Check
       - name: ktlint
         uses: ScaCap/action-ktlint@master
         with:
@@ -47,6 +48,10 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+
+      # 의존성 라이브러리 다운로드 및 확인
+      - name: 의존성 라이브러리 다운로드 및 확인
+        run: ./gradlew androidDependencies
 
       - name: Build with Gradle
         id: build
